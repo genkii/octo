@@ -37,4 +37,4 @@ ctest --test-dir build/release --output-on-failure
 
 ## Tasks
 
-- [ ] Add memory bounds checks
+- [ x ] Add memory bounds checks

@@ -79,6 +79,11 @@ if(OCTO_COVERAGE)
             $<TARGET_FILE:octo_tests>
             -instr-profile=${CMAKE_BINARY_DIR}/octo.profdata
 
+        COMMAND ${CMAKE_COMMAND}
+            -DBINARY=$<TARGET_FILE:octo_tests>
+            -DPROFDATA=${CMAKE_BINARY_DIR}/octo.profdata
+            -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/check_coverage.cmake
+
         COMMAND llvm-cov show
             $<TARGET_FILE:octo_tests>
             -instr-profile=${CMAKE_BINARY_DIR}/octo.profdata
