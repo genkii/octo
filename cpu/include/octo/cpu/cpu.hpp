@@ -28,5 +28,9 @@ public:
 
 	std::uint16_t get_pc();
 
+	void write_memory_word(std::uint16_t address, std::uint16_t value);
+
+	std::uint16_t read_memory_word(std::uint16_t address);
+
 	bool step();
 };

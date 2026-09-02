@@ -41,3 +41,11 @@ void CPU::set_program(std::vector<std::uint8_t> program) {
 
 CPU::CPU(std::uint8_t addressA, std::uint8_t addressPC)
 	: A(addressA), PC(addressPC) {}
+
+void CPU::write_memory_word(std::uint16_t address, std::uint16_t value) {
+	memory.write_word(address, value);
+}
+
+std::uint16_t CPU::read_memory_word(std::uint16_t address) {
+	return memory.read_word(address);
+}

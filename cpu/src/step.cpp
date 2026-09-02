@@ -12,10 +12,10 @@ bool CPU::step() {
 		auto value = fetch_word();
 
 #ifndef NDEBUG
-		log_trace(
-			"[CPU]",
-			std::format("Fetch LOAD opcode with register address: {}", address)
-				.c_str());
+		log_trace("[CPU]",
+				  std::format("Fetch LOAD opcode with register address: {}",
+							  register_id)
+					  .c_str());
 #endif
 
 		switch (register_id) {
