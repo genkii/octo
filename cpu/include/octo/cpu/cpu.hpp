@@ -11,6 +11,8 @@ private:
 	std::vector<std::uint8_t> program;
 
 public:
+	CPU(std::uint8_t adressA, std::uint8_t adressPC);
+
 	std::uint16_t get_a() const;
 
 	void start(std::filesystem::path file);

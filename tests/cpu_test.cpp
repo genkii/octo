@@ -6,7 +6,7 @@
 #include <vector>
 
 TEST(CPU, FetchByteAndPC) {
-	CPU cpu = CPU{};
+	CPU cpu = CPU(0b00000000, 0b00000001);
 	std::vector<std::uint8_t> program = {12};
 
 	cpu.set_program(program);
@@ -17,7 +17,7 @@ TEST(CPU, FetchByteAndPC) {
 }
 
 TEST(CPU, FetchWordAndPC) {
-	CPU cpu = CPU{};
+	CPU cpu = CPU(0b00000000, 0b00000001);
 	std::vector<std::uint8_t> program = {0x12, 0x34};
 
 	cpu.set_program(program);
@@ -28,12 +28,12 @@ TEST(CPU, FetchWordAndPC) {
 }
 
 TEST(CPU, Start) {
-	CPU cpu{};
+	CPU cpu = CPU(0b00000000, 0b00000001);
 
 	auto file = std::filesystem::temp_directory_path() / "octo_test.bin";
 
 	std::vector<std::uint8_t> program = {
-		static_cast<std::uint8_t>(OpCode::LOAD), 0x12, 0x34,
+		static_cast<std::uint8_t>(OpCode::LOAD), 0b00000000, 0x12, 0x34,
 		static_cast<std::uint8_t>(OpCode::HALT)};
 
 	{
@@ -45,7 +45,7 @@ TEST(CPU, Start) {
 	cpu.start(file);
 
 	EXPECT_EQ(cpu.get_a(), 0x1234);
-	EXPECT_EQ(cpu.get_pc(), 4);
+	EXPECT_EQ(cpu.get_pc(), 5);
 
 	std::filesystem::remove(file);
 }

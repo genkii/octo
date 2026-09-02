@@ -7,3 +7,5 @@ std::uint16_t Register16::get() const { return value; }
 void Register16::clear() { value = 0; }
 
 void Register16::increment() { value += 1; }
+
+Register16::Register16(std::uint8_t adress) : adress(adress), value(0) {}

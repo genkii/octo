@@ -6,9 +6,21 @@ bool CPU::step() {
 
 	switch (opcode) {
 	case OpCode::LOAD: {
+		auto adress = fetch_byte();
 		auto value = fetch_word();
 
-		A.set(value);
+		switch (adress) {
+		case 0b00000000:
+			A.set(value);
+			break;
+
+		case 0b00000001:
+			PC.set(value);
+			break;
+
+		default:
+			return false;
+		}
 
 		break;
 	}
