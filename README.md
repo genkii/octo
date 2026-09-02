@@ -38,3 +38,4 @@ ctest --test-dir build/release --output-on-failure
 ## Tasks
 
 - [ x ] Add memory bounds checks
+- [  ] Refactor register ids to be enforced (hard coded) and checkable over an enum class

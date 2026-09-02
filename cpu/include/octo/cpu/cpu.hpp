@@ -9,12 +9,14 @@ private:
 
 	Register16 A;
 
+	Register16 B;
+
 	std::vector<std::uint8_t> program;
 
 	Memory memory;
 
 public:
-	CPU(std::uint8_t addressA, std::uint8_t addressPC);
+	CPU(std::uint8_t addressA, std::uint8_t addressPC, std::uint8_t addressB);
 
 	std::uint16_t get_a() const;
 

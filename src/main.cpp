@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 	app.parse(argc, argv);
 
 	if (*run) {
-		CPU cpu{0b00000000, 0b00000001};
+		CPU cpu{0b00000000, 0b00000001, 0b00000010};
 
 		cpu.start(file);
 	}

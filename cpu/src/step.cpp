@@ -27,6 +27,10 @@ bool CPU::step() {
 			PC.set(value);
 			break;
 
+		case 0b00000010:
+			B.set(value);
+			break;
+
 		default:
 			return false;
 		}
@@ -56,6 +60,10 @@ bool CPU::step() {
 			value = PC.get();
 			break;
 
+		case 0b00000010:
+			value = B.get();
+			break;
+
 		default:
 			return false;
 		}
@@ -78,6 +86,10 @@ bool CPU::step() {
 
 		case 0b00000001:
 			PC.set(value);
+			break;
+
+		case 0b00000010:
+			B.set(value);
 			break;
 
 		default:

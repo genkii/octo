@@ -4,7 +4,7 @@
 #include <vector>
 
 TEST(CPU, StepLoad) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 	std::vector<std::uint8_t> program = {
 		static_cast<std::uint8_t>(OpCode::LOAD), 0b00000000, 0x12, 0x34};
 
@@ -17,7 +17,7 @@ TEST(CPU, StepLoad) {
 }
 
 TEST(CPU, StepHalt) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 	std::vector<std::uint8_t> program = {
 		static_cast<std::uint8_t>(OpCode::HALT)};
 
@@ -29,7 +29,7 @@ TEST(CPU, StepHalt) {
 }
 
 TEST(CPU, StepStore) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 
 	std::vector<std::uint8_t> program = {
 		static_cast<std::uint8_t>(OpCode::LOAD),  0b00000000, 0x12, 0x34,
@@ -47,7 +47,7 @@ TEST(CPU, StepStore) {
 }
 
 TEST(CPU, StepLoadM) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 
 	std::vector<std::uint8_t> program = {
 		static_cast<std::uint8_t>(OpCode::LOADM), 0b00000000, 0x10, 0x00};
@@ -63,7 +63,7 @@ TEST(CPU, StepLoadM) {
 }
 
 TEST(CPU, StepStoreLoadM) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 
 	std::vector<std::uint8_t> program = {
 		// LOAD A, 0x1234
@@ -88,7 +88,7 @@ TEST(CPU, StepStoreLoadM) {
 }
 
 TEST(CPU, StepUnknownOpcode) {
-	CPU cpu = CPU(0b00000000, 0b00000001);
+	CPU cpu = CPU(0b00000000, 0b00000001, 0b00000010);
 	std::vector<std::uint8_t> program = {0xFF};
 
 	cpu.set_program(program);

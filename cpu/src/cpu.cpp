@@ -39,8 +39,8 @@ void CPU::set_program(std::vector<std::uint8_t> program) {
 	this->program = program;
 }
 
-CPU::CPU(std::uint8_t addressA, std::uint8_t addressPC)
-	: A(addressA), PC(addressPC) {}
+CPU::CPU(std::uint8_t addressA, std::uint8_t addressPC, std::uint8_t addressB)
+	: A(addressA), PC(addressPC), B(addressB) {}
 
 void CPU::write_memory_word(std::uint16_t address, std::uint16_t value) {
 	memory.write_word(address, value);
