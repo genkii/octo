@@ -1,6 +1,5 @@
 name: CI
 
-
 on:
   push:
     branches:
@@ -17,10 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install CMake
+        uses: lukka/get-cmake@latest
+
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y clang cmake ninja-build llvm
+          sudo apt install -y clang ninja-build llvm
 
       - name: Configure coverage
         run: cmake --preset coverage
