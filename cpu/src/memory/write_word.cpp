@@ -3,7 +3,7 @@
 #include <octo_log.h>
 
 void Memory::write_word(std::uint16_t high_address, std::uint16_t value) {
-	if (high_address >= 0xFFFE) {
+	if (high_address > 0xFFFE) {
 		log_error("[Memory]", "Memory adress out of bounds");
 		return;
 	}

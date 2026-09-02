@@ -4,7 +4,7 @@
 
 std::uint16_t Memory::read_word(std::uint16_t high_address) {
 
-	if (high_address >= 0xFFFE) {
+	if (high_address > 0xFFFE) {
 		log_error("[Memory]", "Memory adress out of bounds");
 		return 0;
 	}
