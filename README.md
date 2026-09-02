@@ -1,3 +1,7 @@
+# Octo
+
+Octo is an small 16-bit vCPU build in C++
+
 ## Building
 
 ```bash

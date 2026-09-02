@@ -26,6 +26,19 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
+FetchContent_Declare(
+    Corrosion
+    GIT_REPOSITORY https://github.com/corrosion-rs/corrosion.git
+    GIT_TAG v0.6.1
+)
+
+FetchContent_MakeAvailable(Corrosion)
+
+corrosion_import_crate(
+    MANIFEST_PATH ${CMAKE_CURRENT_SOURCE_DIR}/octo-log/Cargo.toml
+)
+
+
 add_subdirectory(cpu)
 
 enable_testing()
@@ -38,6 +51,7 @@ add_executable(octo_tests
 
 target_link_libraries(octo_tests
     PRIVATE
+        octo_log
         octo_cpu
         GTest::gtest_main
 )
@@ -83,6 +97,13 @@ target_link_libraries(octo
     PRIVATE
         CLI11::CLI11
         octo_cpu
+        octo_log
+)
+
+
+target_include_directories(octo
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/octo-log/include
 )
 
 if(OCTO_COVERAGE)

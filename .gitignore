@@ -1,8 +1,8 @@
-# Build directories
+
 /build/
 /build-*/
 
-/# CMake generated files
+
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
@@ -13,16 +13,26 @@ build.ninja
 .ninja_deps
 .ninja_log
 
-# CMake FetchContent
 _deps/
 
-# Coverage
 *.profraw
 *.profdata
 coverage/
 
-# IDE / editor
-.idea/
+target/
+Cargo.lock
 
-# clangd
+*.rs.bk
+
+*.profdata
+*.profraw
+
+.rustc_info.json
+
+.idea/
+.vscode/
+
 .cache/
+
+.DS_Store
+Thumbs.db

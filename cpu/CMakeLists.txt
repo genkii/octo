@@ -13,3 +13,13 @@ target_include_directories(octo_cpu
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+target_link_libraries(octo_cpu
+    PRIVATE
+        octo_log
+)
+
+target_include_directories(octo_cpu
+    PRIVATE
+        ${CMAKE_SOURCE_DIR}/octo-log/include
+)
