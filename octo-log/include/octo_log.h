@@ -21,4 +21,14 @@ extern "C" {
 
 void log(const char *context, const char *message, LogLevel log_level);
 
+void log_debug(const char *context, const char *message);
+
+void log_error(const char *context, const char *message);
+
+void log_info(const char *context, const char *message);
+
+void log_trace(const char *context, const char *message);
+
+void log_warn(const char *context, const char *message);
+
 }  // extern "C"

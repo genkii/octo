@@ -1,3 +1,9 @@
+pub mod log_debug;
+pub mod log_error;
+pub mod log_info;
+pub mod log_trace;
+pub mod log_warn;
+
 use crate::log_level::LogLevel;
 use owo_colors::OwoColorize;
 use std::ffi::{CStr, c_char};
