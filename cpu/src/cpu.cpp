@@ -35,6 +35,7 @@ std::uint16_t CPU::get_a() const { return A.get(); }
 std::uint16_t CPU::get_pc() { return PC.get(); }
 
 void CPU::set_program(std::vector<std::uint8_t> program) {
+	log_trace("[CPU]", "Write bytes into program vector");
 	this->program = program;
 }
 
