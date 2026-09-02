@@ -10,7 +10,7 @@ void Register16::clear() { value = 0; }
 
 void Register16::increment() { value += 1; }
 
-Register16::Register16(std::uint8_t adress) : adress(adress), value(0) {
+Register16::Register16(std::uint8_t address) : address(address), value(0) {
 	log_info("[Register]",
-			 std::format("Created register with adress: {}", adress).c_str());
+			 std::format("Created register with address: {}", address).c_str());
 }

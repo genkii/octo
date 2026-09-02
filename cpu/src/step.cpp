@@ -7,17 +7,17 @@ bool CPU::step() {
 
 	switch (opcode) {
 	case OpCode::LOAD: {
-		auto adress = fetch_byte();
+		auto address = fetch_byte();
 		auto value = fetch_word();
 
 #ifndef NDEBUG
 		log_trace(
 			"[CPU]",
-			std::format("Fetch LOAD opcode with register adress: {}", adress)
+			std::format("Fetch LOAD opcode with register address: {}", address)
 				.c_str());
 #endif
 
-		switch (adress) {
+		switch (address) {
 		case 0b00000000:
 			A.set(value);
 			break;

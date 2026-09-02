@@ -11,7 +11,7 @@ private:
 	std::vector<std::uint8_t> program;
 
 public:
-	CPU(std::uint8_t adressA, std::uint8_t adressPC);
+	CPU(std::uint8_t addressA, std::uint8_t addressPC);
 
 	std::uint16_t get_a() const;
 

@@ -39,5 +39,5 @@ void CPU::set_program(std::vector<std::uint8_t> program) {
 	this->program = program;
 }
 
-CPU::CPU(std::uint8_t adressA, std::uint8_t adressPC)
-	: A(adressA), PC(adressPC) {}
+CPU::CPU(std::uint8_t addressA, std::uint8_t addressPC)
+	: A(addressA), PC(addressPC) {}

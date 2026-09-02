@@ -4,7 +4,7 @@ class Register16 {
 private:
 	std::uint16_t value;
 
-	std::uint8_t adress;
+	std::uint8_t address;
 
 public:
 	std::uint16_t get() const;
@@ -15,5 +15,5 @@ public:
 
 	void increment();
 
-	Register16(std::uint8_t adress);
+	Register16(std::uint8_t address);
 };
