@@ -6,6 +6,8 @@
 
 int main(int argc, char **argv) {
 
+	log_set_level(LogLevel::Error);
+
 	log_info("[Main]", "Starting Octo");
 	CLI::App app{"Octo virtual CPU"};
 

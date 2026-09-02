@@ -1,7 +1,7 @@
-use crate::{log::log, log_level::LogLevel};
+use crate::{log::octo_log, log_level::LogLevel};
 use std::ffi::c_char;
 
 #[unsafe(no_mangle)]
 pub extern "C" fn log_info(context: *const c_char, message: *const c_char) {
-    log(context, message, LogLevel::Info);
+    octo_log(context, message, LogLevel::Info);
 }
