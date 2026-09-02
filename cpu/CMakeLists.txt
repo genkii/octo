@@ -11,6 +11,8 @@ add_library(octo_cpu
     src/memory/write.cpp
     src/memory/read.cpp
     src/memory/memory.cpp
+    src/memory/read_word.cpp
+    src/memory/write_word.cpp
 )
 
 target_include_directories(octo_cpu

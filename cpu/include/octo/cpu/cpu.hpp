@@ -1,5 +1,6 @@
 #include "register.hpp"
 #include <filesystem>
+#include <octo/memory/memory.hpp>
 #include <vector>
 
 class CPU {
@@ -9,6 +10,8 @@ private:
 	Register16 A;
 
 	std::vector<std::uint8_t> program;
+
+	Memory memory;
 
 public:
 	CPU(std::uint8_t addressA, std::uint8_t addressPC);

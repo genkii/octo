@@ -11,4 +11,8 @@ public:
 	std::uint8_t read(std::uint16_t address);
 
 	void set_memory(std::array<std::uint8_t, 65536> memory);
+
+	std::uint16_t read_word(std::uint16_t high_address);
+
+	void write_word(std::uint16_t high_address, std::uint16_t value);
 };

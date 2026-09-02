@@ -1,4 +1,6 @@
 enum class OpCode {
 	LOAD = 0b00000001,
 	HALT = 0b00000100,
+	STORE = 0b00000010,
+	LOADM = 0b00000011,
 };

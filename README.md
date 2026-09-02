@@ -33,3 +33,8 @@ cmake --build --preset coverage --target coverage
 cmake --build --preset release
 ctest --test-dir build/release --output-on-failure
 ```
+
+
+## Tasks
+
+- [ ] Add memory bounds checks
