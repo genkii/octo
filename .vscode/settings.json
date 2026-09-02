@@ -7,5 +7,7 @@
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools",
         "editor.formatOnSave": true
-    }
+    },
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.checkOnSave": true
 }

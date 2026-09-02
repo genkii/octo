@@ -30,7 +30,6 @@ Cargo.lock
 .rustc_info.json
 
 .idea/
-.vscode/
 
 .cache/
 
