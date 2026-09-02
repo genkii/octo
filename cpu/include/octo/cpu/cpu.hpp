@@ -1,24 +1,27 @@
 #include "register.hpp"
-#include <filesystem>;
-#include <vector>;
+#include <filesystem>
+#include <vector>
 
 class CPU {
 private:
-	Register16 A;
-
 	Register16 PC;
+
+	Register16 A;
 
 	std::vector<std::uint8_t> program;
 
-	bool step();
+public:
+	std::uint16_t get_a() const;
+
+	void start(std::filesystem::path file);
+
+	void set_program(std::vector<std::uint8_t> program);
 
 	std::uint8_t fetch_byte();
 
 	std::uint16_t fetch_word();
 
-public:
-	CPU(/* args */);
-	~CPU();
+	std::uint16_t get_pc();
 
-	void start(std::filesystem::path file);
+	bool step();
 };

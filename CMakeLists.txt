@@ -32,6 +32,8 @@ enable_testing()
 
 add_executable(octo_tests
     tests/register_test.cpp
+    tests/cpu_test.cpp
+    tests/step_test.cpp
 )
 
 target_link_libraries(octo_tests

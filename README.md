@@ -1,7 +1,8 @@
 ## Building
 
 ```bash
-CC=clang CXX=clang++ cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --preset debug
+cmake --build --preset debug
 ```
 
 ```bash
@@ -20,4 +21,11 @@ cmake --build --preset coverage --target coverage
 ```bash
 cmake --preset coverage
 cmake --build --preset coverage --target coverage
+```
+
+## Tests
+
+```bash
+cmake --build --preset release
+ctest --test-dir build/release --output-on-failure
 ```
