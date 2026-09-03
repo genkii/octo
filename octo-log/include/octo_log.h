@@ -19,18 +19,36 @@ enum class LogLevel {
 
 extern "C" {
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void log_debug(const char *context, const char *message);
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void log_error(const char *context, const char *message);
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void log_info(const char *context, const char *message);
 
 void log_set_level(LogLevel level);
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void log_trace(const char *context, const char *message);
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void log_warn(const char *context, const char *message);
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 void octo_log(const char *context, const char *message, LogLevel log_level);
 
 }  // extern "C"

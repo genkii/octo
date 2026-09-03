@@ -11,8 +11,15 @@ use std::{
     sync::atomic::Ordering,
 };
 
+/// # Safety
+///
+/// `context` and `message` must be valid C strings.
 #[unsafe(no_mangle)]
-pub extern "C" fn octo_log(context: *const c_char, message: *const c_char, log_level: LogLevel) {
+pub unsafe extern "C" fn octo_log(
+    context: *const c_char,
+    message: *const c_char,
+    log_level: LogLevel,
+) {
     if (log_level as u8) < MIN_LEVEL.load(Ordering::Relaxed) {
         return;
     }
